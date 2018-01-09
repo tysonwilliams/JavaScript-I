@@ -12,7 +12,7 @@ const values = (obj) => {
   // Return all of the values of the object's own properties.
   // Ignore functions
   // http://underscorejs.org/#values
-  return Object.values(obj);
+  return Object.values(obj).filter(value => typeof value !== 'function').toString().split(',');
 };
 
 const mapObject = (obj, cb) => {
